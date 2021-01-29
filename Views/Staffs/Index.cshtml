@@ -1,0 +1,208 @@
+﻿@model IEnumerable<Majorproject.Models.Staff>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Last_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOB)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.First_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Last_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DOB)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Details 1 -->
+<div id="details" class="accordion">
+    <div class="area-1">
+    </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2">
+
+        <!-- Accordion -->
+        <div class="accordion-container" id="accordionOne">
+            <h2>ROOMS & APARTMENTS</h2>
+            <div class="item">
+                <div id="headingOne">
+                    <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
+                        <span class="circle-numbering">1</span><span class="accordion-title">SUPERIOR ROOMS</span>
+                    </span>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
+                    <div class="accordion-body">
+                        Not just stylish and comfortable, our Superior rooms are seamless and smart. The room layout is designed to set the scene while a spacious workspace and complimentary Wi-Fi means you can simply plug in and get down to business as soon as you arrive. Settle in for the night or more with a flat screen TV, tea and coffee facilities and mini bar items available upon request. Choose King, Queen or Single beds, and connecting rooms – ideal for families and friends. The bathroom features hand-crafted bathroom amenities created exclusively for Pullman by C.O. Bigelow.
+                    </div>
+                </div>
+            </div> <!-- end of item -->
+
+            <div class="item">
+                <div id="headingTwo">
+                    <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
+                        <span class="circle-numbering">2</span><span class="accordion-title">DELUXE ROOM</span>
+                    </span>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionOne">
+                    <div class="accordion-body">
+                        Our high-floor Deluxe rooms offer spectacular views over the Waitemata Harbor, becoming the perfect stopover spot for all guests visiting Auckland. Smart, high-end design that not only looks good but feels good makes the Pullman Deluxe room a sanctuary for the global adventurer. Settle in for the night or more with flat screen TV, tea and coffee facilities, mini bar items available upon request. The bathroom features hand-crafted bathroom amenities created exclusively for Pullman by C.O. Bigelow.
+                    </div>
+                </div>
+            </div> <!-- end of item -->
+
+            <div class="item">
+                <div id="headingThree">
+                    <span class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" role="button">
+                        <span class="circle-numbering">3</span><span class="accordion-title">DELUXE SUITE</span>
+                    </span>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionOne">
+                    <div class="accordion-body">
+                        Our premium Deluxe suites are designed to maximize your comfort. Enjoy the comfort of your one or two Queen beds with a pillow menu and make the most of the separate lounge area while sipping on your Nespresso coffee.
+                    </div>
+                </div>
+            </div> <!-- end of item -->
+        </div> <!-- end of accordion-container -->
+        <!-- end of accordion -->
+
+    </div> <!-- end of area-2 -->
+</div> <!-- end of accordion -->
+<!-- end of details 1 -->
+<!-- Details 2 -->
+<div class="tabs">
+    <div class="area-1">
+        <div class="tabs-container">
+
+            <!-- Tabs Links -->
+            <ul class="nav nav-tabs" id="ariaTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-th"></i> JUNIOR SUITE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i class="fas fa-th"></i> EXECUTIVE ROOM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false"><i class="fas fa-th"></i> SUPERIOR RESIDENCE</a>
+                </li>
+            </ul>
+            <!-- end of tabs links -->
+            <!-- Tabs Content -->
+            <div class="tab-content" id="ariaTabsContent">
+
+                <!-- Tab -->
+                <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                    <h4>ABOUT ROOM</h4>
+                    <p>Our spacious Junior Suite provides the ultimate in comfort and style. Here, you’ll find everything you need to relax and seamlessly connect. The separate lounge and working area, sofa and stylish work desk allow you to make the most of it. Enjoy all the benefits of the Superior Room plus Nespresso machine, Bose wireless music station, the flat screen TV, tea and coffee selections, mini bar items are available upon request, and more! The bathroom features hand-crafted bathroom amenities created exclusively for Pullman by C.O. Bigelow.</p>
+                </div> <!-- end of tab-pane -->
+                <!-- end of tab -->
+                <!-- Tab -->
+                <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                    <ul class="list-unstyled li-space-lg first">
+                        <li class="media">
+                            <div class="media-bullet">1</div>
+                            <div class="media-body"><strong>Leisure</strong>• Radio • Sky TV • Bose wireless music station</div>
+                        </li>
+                        <li class="media">
+                            <div class="media-bullet">2</div>
+                            <div class="media-body"><strong>To keep you connected</strong> • Wi-Fi & High-speed wireless internet access • Voicemail • International direct dial telephone</div>
+                        </li>
+                        <li class="media">
+                            <div class="media-bullet">3</div>
+                            <div class="media-body"><strong>For your safety</strong> • In-room safety deposit boxes • Security peep-hole • Deadbolt in rooms • 220/240 V AC </div>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled li-space-lg last">
+                        <li class="media">
+                            <div class="media-bullet">4</div>
+                            <div class="media-body"><strong>For your comfort</strong> • Individually controlled air conditioning • Minibar items available upon request </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-bullet">5</div>
+                            <div class="media-body"><strong>Room size</strong> • 25 sqm</div>
+                        </li>
+                        <li class="media">
+                            <div class="media-bullet">6</div>
+                            <div class="media-body"><strong>Bed Type</strong> • King Bed</div>
+                        </li>
+                    </ul>
+                </div> <!-- end of tab-pane -->
+                <!-- end of tab -->
+                <!-- Tab -->
+                <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                    <p>Talk to the town while enjoying the city and harbor views from your private balcony at Pullman Superior Residence.  A cosmopolitan room with modern furnishings featuring a king bed or two beds, minibar items available upon request, Plasma TVs, smart work area with complimentary Wi-Fi, marble bath or walk-in shower. The bathroom features hand-crafted bathroom amenities created exclusively for Pullman by C.O. Bigelow.</p>
+                    <p>For our modern explorers, Pullman Auckland is pleased to offer a room service menu with a wide range of modern New Zealand and international cuisine made with fresh local produce.</p>
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Wi-Fi & High-speed wireless internet access</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Security peep-hole and Deadbolt in rooms</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Minibar items available upon request</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Individually controlled air conditioning</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Interconnecting rooms available</div>
+                        </li>
+                    </ul>
+                </div> <!-- end of tab-pane -->
+                <!-- end of tab -->
+
+            </div> <!-- end of tab-content -->
+            <!-- end of tabs content -->
+
+        </div> <!-- end of tabs-container -->
+    </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2"></div> <!-- end of area-2 -->
+</div> <!-- end of tabs -->
+<!-- end of details 2 -->
